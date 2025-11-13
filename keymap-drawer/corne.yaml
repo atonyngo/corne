@@ -128,7 +128,7 @@ layers:
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-space$$
   - {type: held}
-  - {type: none}
+  - .
   System:
   - {type: none}
   - {type: none}
@@ -137,9 +137,9 @@ layers:
   - $$mdi:skip-next$$
   - {type: none}
   - {type: none}
+  - $$mdi:chevron-double-down$$
   - $$mdi:chevron-double-up$$
   - {type: none}
-  - $$mdi:chevron-double-down$$
   - $$mdi:monitor-screenshot$$
   - {type: none}
   - {type: none}
@@ -162,8 +162,8 @@ layers:
   - {type: none}
   - {type: none}
   - $$mdi:page-first$$
-  - {type: none}
   - $$mdi:page-last$$
+  - {type: none}
   - {type: none}
   - {type: none}
   - {type: held}

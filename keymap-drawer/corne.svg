@@ -698,8 +698,9 @@ path.combo {
 <g transform="translate(554, 213) rotate(-15.0)" class="key held keypos-40">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
 </g>
-<g transform="translate(616, 205)" class="key none keypos-41">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key none"/>
+<g transform="translate(616, 205)" class="key keypos-41">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">.</text>
 </g>
 </g>
 </g>
@@ -732,14 +733,14 @@ path.combo {
 </g>
 <g transform="translate(588, 35)" class="key keypos-7">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:chevron-double-down" xlink:href="#mdi:chevron-double-down" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:chevron-double-down"/>
+</g>
+<g transform="translate(644, 28)" class="key keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:chevron-double-up" xlink:href="#mdi:chevron-double-up" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:chevron-double-up"/>
 </g>
-<g transform="translate(644, 28)" class="key none keypos-8">
+<g transform="translate(700, 35)" class="key none keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key none"/>
-</g>
-<g transform="translate(700, 35)" class="key keypos-9">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:chevron-double-down" xlink:href="#mdi:chevron-double-down" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:chevron-double-down"/>
 </g>
 <g transform="translate(756, 49)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -821,12 +822,12 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:page-first" xlink:href="#mdi:page-first" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:page-first"/>
 </g>
-<g transform="translate(644, 140)" class="key none keypos-32">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key none"/>
-</g>
-<g transform="translate(700, 147)" class="key keypos-33">
+<g transform="translate(644, 140)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:page-last" xlink:href="#mdi:page-last" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:page-last"/>
+</g>
+<g transform="translate(700, 147)" class="key none keypos-33">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key none"/>
 </g>
 <g transform="translate(756, 161)" class="key none keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key none"/>
