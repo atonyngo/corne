@@ -1,6 +1,6 @@
 #! /bin/sh
 
-cd ~/downloads
+cd /home/atonyngo/downloads
 unzip firmware.zip
 
 echo "Sleeping for 10 seconds..."

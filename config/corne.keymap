@@ -21,7 +21,7 @@
                                   &mo 3     &mo 1     &kp SPACE &kp SPACE &mo 2     &kp LANG1
             >;
         };
-           
+
         symbol_layer {
 // ------------------------------------------------------------------------------
 // | nop |  `  |  +  |  {  |  }  |  ~  |   |  %  |  !  |  @  |  #  |  *  |  \  |
@@ -30,7 +30,7 @@
 //                   | nop |     | SPC |   | SPC | nop | nop |
             display-name = "Symbols";
             bindings = <
-    ___       &kp GRAVE &kp PLUS  &kp LBRC  &kp RBRC  &kp TILDE &kp PRCNT &kp EXCL  &kp AT    &kp HASH  &kp STAR  &kp BSLH 
+    ___       &kp GRAVE &kp PLUS  &kp LBRC  &kp RBRC  &kp TILDE &kp PRCNT &kp EXCL  &kp AT    &kp HASH  &kp STAR  &kp BSLH
     ___       &kp SQT   &kp EQUAL &kp LPAR  &kp RPAR  &kp DQT   &kp CARET &kp UNDER &kp MINUS &kp DLLR  &kp AMPS  &kp PIPE
     ___       ___       ___       &kp LBKT  &kp RBKT  ___       ___       ___       ___       ___       ___       ___
                                   ___       &trans    &kp SPACE &kp SPACE ___       ___
@@ -42,28 +42,28 @@
 // | TAB |  F1 |  F2 |  F3 |  F4 | nop |   | nop |  1  |  2  |  3  | nop | BKS |
 // | ESC |  F5 |  F6 |  F7 |  F8 | nop |   | nop |  4  |  5  |  6  |  0  | RET |
 // | nop |  F9 | F10 | F11 | F12 | nop |   | nop |  7  |  8  |  9  | nop | nop |
-//                   | nop | nop | SPC |   | SPC |     | nop |
+//                   | nop | nop | SPC |   | SPC |     |  .  |
             display-name = "Numbers";
             bindings = <
     &kp TAB   &kp F1    &kp F2    &kp F3    &kp F4    ___       ___       &kp N1    &kp N2    &kp N3    ___       &kp BSPC
     &kp ESC   &kp F5    &kp F6    &kp F7    &kp F8    ___       ___       &kp N4    &kp N5    &kp N6    &kp N0    &kp RET
-    ___       &kp F9    &kp F10   &kp F11   &kp F12   ___       ___       &kp N7    &kp N8    &kp N9    ___       ___   
-                                  ___       ___       &kp SPACE &kp SPACE &trans    ___
+    ___       &kp F9    &kp F10   &kp F11   &kp F12   ___       ___       &kp N7    &kp N8    &kp N9    ___       ___
+                                  ___       ___       &kp SPACE &kp SPACE &trans    &kp DOT
             >;
         };
 
         system_layer {
 // ------------------------------------------------------------------------------
-// | nop | nop | PRV | PLY | NXT | nop |   | nop | PUP | nop | PDN | PSC | nop |
+// | nop | nop | PRV | PLY | NXT | nop |   | nop | PDN | PDN | nop | PSC | nop |
 // | nop | nop | VL- | MUT | VL+ | nop |   | LFT | DWN |  UP | RGT | nop | nop |
-// | BTC | nop | BTP | nop | BTN | nop |   | nop | HOM | nop | END | nop | nop |
+// | BTC | nop | BTP | nop | BTN | nop |   | nop | HOM | END | nop | nop | nop |
 //                   |     | nop | nop |   | nop | nop | nop |
             display-name = "System";
             bindings = <
-    ___        ___       &kp C_PREV   &kp C_PP   &kp C_NEXT   ___        ___       &kp PG_UP ___      &kp PG_DN &kp PSCRN ___     
-    ___        ___       &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP ___        &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT ___       ___      
-    &bt BT_CLR ___       &bt BT_PRV   ___        &bt BT_NXT   ___        ___       &kp HOME  ___      &kp END   ___       ___   
-                                     &trans      ___          ___        ___       ___       ___  
+    ___        ___       &kp C_PREV   &kp C_PP   &kp C_NEXT   ___        ___       &kp PG_DN &kp PG_UP  ___       &kp PSCRN ___
+    ___        ___       &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP ___        &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT ___       ___
+    &bt BT_CLR ___       &bt BT_PRV   ___        &bt BT_NXT   ___        ___       &kp HOME  &kp END    ___       ___       ___
+                                     &trans      ___          ___        ___       ___       ___
             >;
         };
 
@@ -170,19 +170,19 @@
             key-positions = <13 15>;
             bindings = <&kp LA(LSHFT)>;
         };
-        
+
         combo_raltshift {
             timeout-ms = <50>;
             key-positions = <20 22>;
             bindings = <&kp LA(LSHFT)>;
-        };  
+        };
 
         // Ctrl + Alt
         combo_lctrlalt {
             timeout-ms = <50>;
             key-positions = <13 14>;
             bindings = <&kp LC(LALT)>;
-        }; 
+        };
 
         combo_rctrlalt {
             timeout-ms = <50>;
