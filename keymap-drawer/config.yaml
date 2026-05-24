@@ -15,20 +15,13 @@ parse_config:
 
     "&caps_word": $$mdi:file-word-box$$
 
-    "&kp LC(LSHFT)":
-      shifted: $$mdi:arrow-up-bold$$
-      tap: ""
-      hold: $$mdi:apple-keyboard-control$$
+    "&hrl LS(LA(LCTRL)) ESC":
+      tap: ESC
+      hold: $$mdi:rocket$$
 
-    "&kp LA(LSHFT)":
-      shifted: $$mdi:arrow-up-bold$$
-      tap: ""
-      hold: $$mdi:apple-keyboard-option$$
-
-    "&kp LC(LALT)":
-      shifted: $$mdi:apple-keyboard-option$$
-      tap: ""
-      hold: $$mdi:apple-keyboard-control$$
+    "&hrr LS(LA(LCTRL)) RET":
+      tap: RET
+      hold: $$mdi:rocket$$
 
     "&tog 2":
       tap: $$mdi:numeric$$
@@ -92,7 +85,7 @@ parse_config:
     LALT: $$mdi:apple-keyboard-option$$
     LSHFT: $$mdi:arrow-up-bold$$
     LMETA: $$mdi:penguin$$
-    
+
     # Media
     C_PP: $$mdi:play-pause$$
     C_NEXT: $$mdi:skip-next$$
@@ -109,10 +102,10 @@ parse_config:
       hold: $$mdi:chevron-double-right$$
     BT_PRV:
       tap: $$mdi:bluetooth$$
-      hold: $$mdi:chevron-double-left$$ 
+      hold: $$mdi:chevron-double-left$$
     BT_CLR: $$mdi:bluetooth-off$$
 
 draw_config:
   append_colon_to_layer_header: false
-  separate_combo_diagrams: true
-  combo_diagrams_scale: 2
+  # separate_combo_diagrams: true
+  # combo_diagrams_scale: 2

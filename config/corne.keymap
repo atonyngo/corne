@@ -2,7 +2,53 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define LHS  0  1  2  3  4  5 \
+            12 13 14 15 16 17 \
+            24 25 26 27 28 29
+
+#define RHS  6  7  8  9 10 11 \
+            18 19 20 21 22 23 \
+            30 31 32 33 34 35
+
+#define TMB 36 37 38 39 40 41
+
+#define DEFINE_HRM(_label, _name, _triggers) \
+    _label: _name {                               \
+        compatible = "zmk,behavior-hold-tap";     \
+        #binding-cells = <2>;                     \
+        flavor = "balanced";                      \
+        tapping-term-ms = <200>;                  \
+        quick-tap-ms = <175>;                     \
+        require-prior-idle-ms = <100>;            \
+        bindings = <&kp>, <&kp>;                  \
+        hold-trigger-key-positions = <_triggers>; \
+        hold-trigger-on-release;                  \
+    }
+
 #define ___ &none
+
+#define BASE 0
+#define SYM 1
+#define NUM 2
+#define SYS 3
+
+#define HYP LS(LA(LCTRL))
+
+#define HRL_A &hrl LMETA A
+#define HRL_S &hrl LALT  S
+#define HRL_D &hrl LCTRL D
+#define HRL_F &hrl LSHFT F
+#define HRL_G &hrl HYP   G
+
+#define HRR_SEM &hrr LMETA SEMI
+#define HRR_L   &hrr LALT  L
+#define HRR_K   &hrr LCTRL K
+#define HRR_J   &hrr LSHFT J
+#define HRR_H   &hrr HYP   H
+
+&caps_word {
+    continue-list = <UNDER MINUS BSPC DEL>;
+};
 
 / {
     keymap {
@@ -16,7 +62,7 @@
             display-name = "Base";
             bindings = <
     &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
-    &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G     &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp RET
+    &kp ESC   HRL_A     HRL_S     HRL_D     HRL_F     HRL_G     HRR_H     HRR_J     HRR_K     HRR_L     HRR_SEM   &kp RET
     ___       &kp Z     &kp X     &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  ___
                                   &mo 3     &mo 1     &kp SPACE &kp SPACE &mo 2     &kp LANG1
             >;
@@ -54,15 +100,15 @@
 
         system_layer {
 // ------------------------------------------------------------------------------
-// | nop | nop | PRV | PLY | NXT | nop |   | nop | PDN | PDN | nop | PSC | nop |
+// | nop | nop | PRV | PLY | NXT | nop |   | nop | PDN | PDN | nop | PSC | DEL |
 // | nop | nop | VL- | MUT | VL+ | nop |   | LFT | DWN |  UP | RGT | nop | nop |
-// | BTC | nop | BTP | nop | BTN | nop |   | nop | HOM | END | nop | nop | nop |
+// | nop | nop | BTP | nop | BTN | nop |   | nop | HOM | END | nop | nop | nop |
 //                   |     | nop | nop |   | nop | nop | nop |
             display-name = "System";
             bindings = <
-    ___        ___       &kp C_PREV   &kp C_PP   &kp C_NEXT   ___        ___       &kp PG_DN &kp PG_UP  ___       &kp PSCRN ___
+    ___        ___       &kp C_PREV   &kp C_PP   &kp C_NEXT   ___        ___       &kp PG_DN &kp PG_UP  ___       &kp PSCRN &kp DEL
     ___        ___       &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP ___        &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT ___       ___
-    &bt BT_CLR ___       &bt BT_PRV   ___        &bt BT_NXT   ___        ___       &kp HOME  &kp END    ___       ___       ___
+    ___        ___       &bt BT_PRV   ___        &bt BT_NXT   ___        ___       &kp HOME  &kp END    ___       ___       ___
                                      &trans      ___          ___        ___       ___       ___
             >;
         };
@@ -78,116 +124,59 @@
 
 // Key Positions
 // ------------------------------------------------------------------------------
-// |  0  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  10 |  11 |
+// |   0 |   1 |   2 |   3 |   4 |   5 |   |   6 |   7 |   8 |   9 |  10 |  11 |
 // |  12 |  13 |  14 |  15 |  16 |  17 |   |  18 |  19 |  20 |  21 |  22 |  23 |
 // |  24 |  25 |  26 |  27 |  28 |  29 |   |  30 |  31 |  32 |  33 |  34 |  35 |
 //                   |  36 |  37 |  38 |   |  39 |  40 |  41 |
     combos {
         compatible = "zmk,combos";
 
-        // Layer toggle mods
-        combo_tog_nums {
-            timeout-ms = <50>;
-            key-positions = <37 40>;
-            bindings = <&tog 2>;
-        };
-
-        // Capsword
-        combo_capsword {
-            timeout-ms = <50>;
-            key-positions = <15 16 19 20>;
+        combo_caps_word {
             bindings = <&caps_word>;
+            key-positions = <16 19>;
+            layers = <BASE>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
-        // Shift
-        combo_lshift {
+        combo_tog_nums {
+            bindings = <&tog 2>;
+            key-positions = <37 40>;
+            layers = <BASE>;
             timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp LSHFT>;
+            require-prior-idle-ms = <100>;
         };
 
-        combo_rshift {
+        combo_caps_lock {
+            bindings = <&CAPS>;
+            key-positions = <16 19>;
+            layers = <SYS>;
             timeout-ms = <50>;
-            key-positions = <19 20>;
-            bindings = <&kp LSHFT>;
+            require-prior-idle-ms = <100>;
         };
 
-        // Ctrl
-        combo_lctrl {
+        combo_bt_clr {
+            bindings = <&bt BT_CLR>;
+            key-positions = <26 28>;
+            layers = <SYS>;
             timeout-ms = <50>;
-            key-positions = <14 16>;
-            bindings = <&kp LCTRL>;
-        };
-
-        combo_rctrl {
-            timeout-ms = <50>;
-            key-positions = <19 21>;
-            bindings = <&kp LCTRL>;
-        };
-
-        // Alt
-        combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <13 16>;
-            bindings = <&kp LALT>;
-        };
-
-        combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <19 22>;
-            bindings = <&kp LALT>;
-        };
-
-        // Meta
-        combo_lmeta {
-            timeout-ms = <50>;
-            key-positions = <12 16>;
-            bindings = <&kp LMETA>;
-        };
-
-        combo_rmeta {
-            timeout-ms = <50>;
-            key-positions = <19 23>;
-            bindings = <&kp LMETA>;
-        };
-
-        // Ctrl + Shift
-        combo_lctrlshift {
-            timeout-ms = <50>;
-            key-positions = <14 15>;
-            bindings = <&kp LC(LSHFT)>;
-        };
-
-        combo_rctrlshift {
-            timeout-ms = <50>;
-            key-positions = <20 21>;
-            bindings = <&kp LC(LSHFT)>;
-        };
-
-        // Alt + Shift
-        combo_laltshift {
-            timeout-ms = <50>;
-            key-positions = <13 15>;
-            bindings = <&kp LA(LSHFT)>;
-        };
-
-        combo_raltshift {
-            timeout-ms = <50>;
-            key-positions = <20 22>;
-            bindings = <&kp LA(LSHFT)>;
-        };
-
-        // Ctrl + Alt
-        combo_lctrlalt {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
-            bindings = <&kp LC(LALT)>;
-        };
-
-        combo_rctrlalt {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp LC(LALT)>;
+            require-prior-idle-ms = <100>;
         };
     };
+
+    behaviors {
+        DEFINE_HRM(
+            hrl,
+            home_row_mod_left,
+            RHS TMB
+        );
+
+        DEFINE_HRM(
+            hrr,
+            home_row_mod_right,
+            LHS TMB
+        );
+    };
 };
+
+
