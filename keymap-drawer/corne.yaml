@@ -13,18 +13,18 @@ layers:
   - O
   - P
   - $$mdi:backspace$$
-  - $$mdi:keyboard-esc$$
-  - A
-  - S
-  - D
-  - F
+  - {t: '$$mdi:keyboard-esc$$', h: 'Sft+Alt+$$mdi:apple-keyboard-control$$'}
+  - {t: A, h: '$$mdi:penguin$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: F, h: '$$mdi:arrow-up-bold$$'}
   - G
   - H
-  - J
-  - K
-  - L
-  - ;
-  - $$mdi:keyboard-return$$
+  - {t: J, h: '$$mdi:arrow-up-bold$$'}
+  - {t: K, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: L, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: ;, h: '$$mdi:penguin$$'}
+  - {t: '$$mdi:keyboard-return$$', h: 'Sft+Alt+$$mdi:apple-keyboard-control$$'}
   - {type: none}
   - Z
   - X
@@ -141,7 +141,7 @@ layers:
   - $$mdi:chevron-double-up$$
   - {type: none}
   - $$mdi:monitor-screenshot$$
-  - {type: none}
+  - DEL
   - {type: none}
   - {type: none}
   - $$mdi:volume-low$$
@@ -154,7 +154,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {type: none}
   - {type: none}
-  - $$mdi:bluetooth-off$$
+  - {type: none}
   - {type: none}
   - {t: '$$mdi:bluetooth$$', h: '$$mdi:chevron-double-left$$'}
   - {type: none}
@@ -173,35 +173,15 @@ layers:
   - {type: none}
   - {type: none}
 combos:
+- p: [16, 19]
+  k: $$mdi:file-word-box$$
+  l: [Base]
 - p: [37, 40]
   k: $$mdi:numeric$$
-- p: [15, 16, 19, 20]
+  l: [Base]
+- p: [16, 19]
   k: $$mdi:file-word-box$$
-- p: [15, 16]
-  k: $$mdi:arrow-up-bold$$
-- p: [19, 20]
-  k: $$mdi:arrow-up-bold$$
-- p: [14, 16]
-  k: $$mdi:apple-keyboard-control$$
-- p: [19, 21]
-  k: $$mdi:apple-keyboard-control$$
-- p: [13, 16]
-  k: $$mdi:apple-keyboard-option$$
-- p: [19, 22]
-  k: $$mdi:apple-keyboard-option$$
-- p: [12, 16]
-  k: $$mdi:penguin$$
-- p: [19, 23]
-  k: $$mdi:penguin$$
-- p: [14, 15]
-  k: {h: '$$mdi:apple-keyboard-control$$', s: '$$mdi:arrow-up-bold$$'}
-- p: [20, 21]
-  k: {h: '$$mdi:apple-keyboard-control$$', s: '$$mdi:arrow-up-bold$$'}
-- p: [13, 15]
-  k: {h: '$$mdi:apple-keyboard-option$$', s: '$$mdi:arrow-up-bold$$'}
-- p: [20, 22]
-  k: {h: '$$mdi:apple-keyboard-option$$', s: '$$mdi:arrow-up-bold$$'}
-- p: [13, 14]
-  k: {h: '$$mdi:apple-keyboard-control$$', s: '$$mdi:apple-keyboard-option$$'}
-- p: [21, 22]
-  k: {h: '$$mdi:apple-keyboard-control$$', s: '$$mdi:apple-keyboard-option$$'}
+  l: [System]
+- p: [26, 28]
+  k: $$mdi:bluetooth-off$$
+  l: [System]
