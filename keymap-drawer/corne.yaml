@@ -13,7 +13,7 @@ layers:
   - O
   - P
   - $$mdi:backspace$$
-  - {t: '$$mdi:keyboard-esc$$', h: 'Sft+Alt+$$mdi:apple-keyboard-control$$'}
+  - {t: ESC, h: '$$mdi:rocket$$'}
   - {t: A, h: '$$mdi:penguin$$'}
   - {t: S, h: '$$mdi:apple-keyboard-option$$'}
   - {t: D, h: '$$mdi:apple-keyboard-control$$'}
@@ -24,7 +24,7 @@ layers:
   - {t: K, h: '$$mdi:apple-keyboard-control$$'}
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, h: '$$mdi:penguin$$'}
-  - {t: '$$mdi:keyboard-return$$', h: 'Sft+Alt+$$mdi:apple-keyboard-control$$'}
+  - {t: RET, h: '$$mdi:rocket$$'}
   - {type: none}
   - Z
   - X
@@ -180,7 +180,7 @@ combos:
   k: $$mdi:numeric$$
   l: [Base]
 - p: [16, 19]
-  k: $$mdi:file-word-box$$
+  k: CAPS
   l: [System]
 - p: [26, 28]
   k: $$mdi:bluetooth-off$$

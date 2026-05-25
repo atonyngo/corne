@@ -148,7 +148,7 @@
         };
 
         combo_caps_lock {
-            bindings = <&CAPS>;
+            bindings = <&kp CAPS>;
             key-positions = <16 19>;
             layers = <SYS>;
             timeout-ms = <50>;
