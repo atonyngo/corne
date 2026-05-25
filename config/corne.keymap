@@ -17,9 +17,9 @@
         compatible = "zmk,behavior-hold-tap";     \
         #binding-cells = <2>;                     \
         flavor = "balanced";                      \
-        tapping-term-ms = <200>;                  \
+        tapping-term-ms = <150>;                  \
         quick-tap-ms = <175>;                     \
-        require-prior-idle-ms = <100>;            \
+        require-prior-idle-ms = <75>;             \
         bindings = <&kp>, <&kp>;                  \
         hold-trigger-key-positions = <_triggers>; \
         hold-trigger-on-release;                  \
@@ -34,14 +34,12 @@
 
 #define HYP LS(LA(LCTRL))
 
-#define HRL_A &hrl LMETA A
-#define HRL_S &hrl LALT  S
+#define HRL_A &hrl LALT  A
 #define HRL_D &hrl LCTRL D
 #define HRL_F &hrl LSHFT F
 #define HRL_G &hrl HYP   G
 
-#define HRR_SEM &hrr LMETA SEMI
-#define HRR_L   &hrr LALT  L
+#define HRR_SEM &hrr LALT  SEMI
 #define HRR_K   &hrr LCTRL K
 #define HRR_J   &hrr LSHFT J
 #define HRR_H   &hrr HYP   H
@@ -62,7 +60,7 @@
             display-name = "Base";
             bindings = <
     &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
-    &kp ESC   HRL_A     HRL_S     HRL_D     HRL_F     HRL_G     HRR_H     HRR_J     HRR_K     HRR_L     HRR_SEM   &kp RET
+    &kp ESC   HRL_A     &kp S     HRL_D     HRL_F     HRL_G     HRR_H     HRR_J     HRR_K     &kp L     HRR_SEM   &kp RET
     ___       &kp Z     &kp X     &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  ___
                                   &mo 3     &mo 1     &kp SPACE &kp SPACE &mo 2     &kp LANG1
             >;
@@ -136,7 +134,7 @@
             key-positions = <16 19>;
             layers = <BASE>;
             timeout-ms = <50>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <200>;
         };
 
         combo_tog_nums {
@@ -144,7 +142,7 @@
             key-positions = <37 40>;
             layers = <BASE>;
             timeout-ms = <50>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <200>;
         };
 
         combo_caps_lock {
@@ -152,7 +150,7 @@
             key-positions = <16 19>;
             layers = <SYS>;
             timeout-ms = <50>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <200>;
         };
 
         combo_bt_clr {
@@ -160,7 +158,24 @@
             key-positions = <26 28>;
             layers = <SYS>;
             timeout-ms = <50>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <200>;
+        };
+
+        // Meta
+        combo_lmeta {
+            bindings = <&kp LMETA>;
+            key-positions = <13 16>;
+            layers = <BASE>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+        };
+
+        combo_rmeta {
+            bindings = <&kp RMETA>;
+            key-positions = <19 22>;
+            layers = <BASE>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
         };
     };
 

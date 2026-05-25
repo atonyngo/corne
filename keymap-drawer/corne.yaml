@@ -13,18 +13,18 @@ layers:
   - O
   - P
   - $$mdi:backspace$$
-  - {t: ESC, h: '$$mdi:rocket$$'}
-  - {t: A, h: '$$mdi:penguin$$'}
-  - {t: S, h: '$$mdi:apple-keyboard-option$$'}
+  - $$mdi:keyboard-esc$$
+  - {t: A, h: '$$mdi:apple-keyboard-option$$'}
+  - S
   - {t: D, h: '$$mdi:apple-keyboard-control$$'}
   - {t: F, h: '$$mdi:arrow-up-bold$$'}
-  - G
-  - H
+  - {t: G, h: '$$mdi:rocket$$'}
+  - {t: H, h: '$$mdi:rocket$$'}
   - {t: J, h: '$$mdi:arrow-up-bold$$'}
   - {t: K, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: L, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: ;, h: '$$mdi:penguin$$'}
-  - {t: RET, h: '$$mdi:rocket$$'}
+  - L
+  - {t: ;, h: '$$mdi:apple-keyboard-option$$'}
+  - $$mdi:keyboard-return$$
   - {type: none}
   - Z
   - X
@@ -185,3 +185,9 @@ combos:
 - p: [26, 28]
   k: $$mdi:bluetooth-off$$
   l: [System]
+- p: [13, 16]
+  k: $$mdi:penguin$$
+  l: [Base]
+- p: [19, 22]
+  k: $$mdi:penguin$$
+  l: [Base]

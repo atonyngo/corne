@@ -22,3 +22,6 @@ mount /dev/sda /media/corne
 mv "corne_right nice_view_adapter nice_view-nice_nano_v2-zmk.uf2" /media/corne
 umount /media/corne
 echo "Finished flashing right side"
+
+rm firmware.zip
+echo "Deleting firmware.zip"

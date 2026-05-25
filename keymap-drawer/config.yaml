@@ -15,12 +15,12 @@ parse_config:
 
     "&caps_word": $$mdi:file-word-box$$
 
-    "&hrl LS(LA(LCTRL)) ESC":
-      tap: ESC
+    "&hrl LS(LA(LCTRL)) G":
+      tap: G
       hold: $$mdi:rocket$$
 
-    "&hrr LS(LA(LCTRL)) RET":
-      tap: RET
+    "&hrr LS(LA(LCTRL)) H":
+      tap: H
       hold: $$mdi:rocket$$
 
     "&tog 2":
@@ -82,9 +82,16 @@ parse_config:
 
     # Modifiers
     LCTRL: $$mdi:apple-keyboard-control$$
+    RCTRL: $$mdi:apple-keyboard-control$$
+
     LALT: $$mdi:apple-keyboard-option$$
+    RALT: $$mdi:apple-keyboard-option$$
+
     LSHFT: $$mdi:arrow-up-bold$$
+    RSHFT: $$mdi:arrow-up-bold$$
+
     LMETA: $$mdi:penguin$$
+    RMETA: $$mdi:penguin$$
 
     # Media
     C_PP: $$mdi:play-pause$$
