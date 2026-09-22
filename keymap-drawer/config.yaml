@@ -66,6 +66,7 @@ parse_config:
 
     # Other
     PSCRN: $$mdi:monitor-screenshot$$
+    CAPSLOCK: $$mdi:caps-lock$$
 
     # Language
     LANG1: $$mdi:syllabary-hangul$$
@@ -92,7 +93,7 @@ parse_config:
     LALT: $$mdi:apple-keyboard-option$$
     LSHFT: $$mdi:arrow-up-bold$$
     LMETA: $$mdi:penguin$$
-    
+
     # Media
     C_PP: $$mdi:play-pause$$
     C_NEXT: $$mdi:skip-next$$
@@ -109,7 +110,7 @@ parse_config:
       hold: $$mdi:chevron-double-right$$
     BT_PRV:
       tap: $$mdi:bluetooth$$
-      hold: $$mdi:chevron-double-left$$ 
+      hold: $$mdi:chevron-double-left$$
     BT_CLR: $$mdi:bluetooth-off$$
 
 draw_config:
