@@ -141,7 +141,7 @@ layers:
   - $$mdi:chevron-double-up$$
   - {type: none}
   - $$mdi:monitor-screenshot$$
-  - {type: none}
+  - DEL
   - {type: none}
   - {type: none}
   - $$mdi:volume-low$$
@@ -175,8 +175,10 @@ layers:
 combos:
 - p: [37, 40]
   k: $$mdi:numeric$$
-- p: [15, 16, 19, 20]
+- p: [15, 20]
   k: $$mdi:file-word-box$$
+- p: [17, 18]
+  k: $$mdi:caps-lock$$
 - p: [15, 16]
   k: $$mdi:arrow-up-bold$$
 - p: [19, 20]
